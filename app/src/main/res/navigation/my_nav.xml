@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/lastRaceResults"
+        android:name="com.example.formula1.LastRaceResults"
+        android:label="Last race results"
+        tools:layout="@layout/fragment_last_race_results" >
+        <action
+            android:id="@+id/action_lastRaceResults_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.formula1.HomeFragment"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_lastRaceResults"
+            app:destination="@id/lastRaceResults" />
+    </fragment>
+</navigation>
