@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.stream.JsonReader
 import org.json.JSONObject
@@ -44,9 +45,21 @@ import java.util.*
 
         myAPICall.getLastResult().enqueue(object: Callback<lastRaceModelDriver> {
             override fun onResponse(call: Call<lastRaceModelDriver>, response: Response<lastRaceModelDriver>) {
-                var jsonResp = response
 
-                d("asko",jsonResp.toString())
+                if(response.body() != null){
+                    var resp = response.body()
+                    d("asko", resp!!.mrData.raceTable.races.get(0).results.get(0).driver.familyName)
+
+                    var adapter = lastRaceAdapter (resp.mrData.raceTable.races.get(0).results.clone())
+                    recycler.setLayoutManager(LinearLayoutManager(context))
+                    recycler.adapter=adapter
+
+
+
+                }
+                else{
+                    return
+                }
 
             }
 
@@ -66,4 +79,4 @@ import java.util.*
 
     }
 
-}
+ }
