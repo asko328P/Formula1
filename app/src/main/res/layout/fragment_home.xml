@@ -21,20 +21,21 @@
 
         <Button
             android:id="@+id/buttonLastRaceResults"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:text="GO TO LASTRACE FRAGMENT"
+            android:text="Last race results"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView"
             app:layout_constraintVertical_bias="0.36"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="79dp" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="GO TO LASTRACE FRAGMENT"
+            android:text="Current chamionship standings:"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView"
             app:layout_constraintVertical_bias="0.36"
