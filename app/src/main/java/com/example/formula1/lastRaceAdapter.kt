@@ -6,10 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 class lastRaceAdapter(private val dataSet: Array<Result>) : RecyclerView.Adapter<lastRaceAdapter.ViewHolder>() {
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View, var driverParc: DriverParc? = null) : RecyclerView.ViewHolder(view) {
         val givenName: TextView
         val familyName: TextView
         val position: TextView
@@ -22,6 +23,13 @@ class lastRaceAdapter(private val dataSet: Array<Result>) : RecyclerView.Adapter
             familyName = view.findViewById(R.id.textView5)
             position = view.findViewById(R.id.textView6)
             points = view.findViewById(R.id.textView9)
+
+            view.setOnClickListener{
+                driverParc?.let {
+                    val directions = LastRaceResultsDirections.actionLastRaceResultsToDriverDetailFragment2(it)
+                    view.findNavController().navigate(directions)
+                }
+            }
         }
     }
     class ViewHolderFirstPlace(view: View) : RecyclerView.ViewHolder(view) {
@@ -108,6 +116,17 @@ class lastRaceAdapter(private val dataSet: Array<Result>) : RecyclerView.Adapter
         viewHolder.position.text = dataSet.get(position).position
         viewHolder.points.text = dataSet.get(position).points.toString()
 
+        var tempDriverParc=DriverParc(
+            dataSet.get(position).driver.givenName,
+            dataSet.get(position).driver.familyName,
+            dataSet.get(position).driver.driverId,
+            dataSet.get(position).driver.nationality,
+            dataSet.get(position).driver.url,
+            dataSet.get(position).driver.dateOfBirth,
+            dataSet.get(position).driver.permanentNumber
+        )
+
+        viewHolder.driverParc = tempDriverParc
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -117,7 +136,6 @@ class lastRaceAdapter(private val dataSet: Array<Result>) : RecyclerView.Adapter
             2 -> R.layout.driver_item3
             else -> R.layout.driver_item
         }
-        return R.layout.driver_item1
     }
 
     // Return the size of your dataset (invoked by the layout manager)

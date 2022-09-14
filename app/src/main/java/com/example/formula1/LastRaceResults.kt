@@ -38,8 +38,6 @@ import java.util.*
 
         var recycler = view.findViewById<RecyclerView>(R.id.recycler)
 
-        var listOfDrivers = MutableLiveData<List<lastRaceModelDriver>>()
-
         val retrofit =Retrofit.Builder().
             baseUrl("http://ergast.com/api/f1/").
             addConverterFactory(GsonConverterFactory.create()).

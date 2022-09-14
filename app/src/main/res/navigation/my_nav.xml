@@ -15,6 +15,9 @@
             app:destination="@id/homeFragment"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_lastRaceResults_to_driverDetailFragment2"
+            app:destination="@id/driverDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -24,5 +27,14 @@
         <action
             android:id="@+id/action_homeFragment_to_lastRaceResults"
             app:destination="@id/lastRaceResults" />
+    </fragment>
+    <fragment
+        android:id="@+id/driverDetailFragment"
+        android:name="com.example.formula1.DriverDetailFragment"
+        android:label="fragment_driver_detail"
+        tools:layout="@layout/fragment_driver_detail" >
+        <argument
+            android:name="driverParc"
+            app:argType="com.example.formula1.DriverParc" />
     </fragment>
 </navigation>

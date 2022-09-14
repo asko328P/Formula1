@@ -43,5 +43,15 @@ data class Driver (
     val givenName : String,
     @SerializedName("familyName")
     val familyName : String,
+    @SerializedName("driverId")
+    val driverId : String,
+    @SerializedName("nationality")
+    val nationality : String,
+    @SerializedName("url")
+    val url : String,
+    @SerializedName("dateOfBirth")
+    val dateOfBirth : String,
+    @SerializedName("permanentNumber")
+    val permanentNumber : String,
 
 )
