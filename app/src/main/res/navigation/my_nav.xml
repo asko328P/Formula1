@@ -27,14 +27,22 @@
         <action
             android:id="@+id/action_homeFragment_to_lastRaceResults"
             app:destination="@id/lastRaceResults" />
+        <action
+            android:id="@+id/action_homeFragment_to_currentConstructorsStandings"
+            app:destination="@id/currentConstructorsStandings" />
     </fragment>
     <fragment
         android:id="@+id/driverDetailFragment"
         android:name="com.example.formula1.DriverDetailFragment"
-        android:label="fragment_driver_detail"
+        android:label="Driver Details"
         tools:layout="@layout/fragment_driver_detail" >
         <argument
             android:name="driverParc"
             app:argType="com.example.formula1.DriverParc" />
     </fragment>
+    <fragment
+        android:id="@+id/currentConstructorsStandings"
+        android:name="com.example.formula1.CurrentConstructorsStandings"
+        android:label="Current constructor standings:"
+        tools:layout="@layout/fragment_current_constructors_standings" />
 </navigation>

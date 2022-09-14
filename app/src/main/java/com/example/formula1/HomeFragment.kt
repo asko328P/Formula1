@@ -1,6 +1,7 @@
 package com.example.formula1
 
 import android.content.pm.ActivityInfo
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,7 +25,16 @@ class HomeFragment : Fragment() {
         buttonLastRaceResults.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_lastRaceResults)
         }
+        val buttonConstructorsStandings = view.findViewById<Button>(R.id.buttonCurrentChampionship)
+        buttonConstructorsStandings.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_currentConstructorsStandings)
+        }
         return view
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+
     }
 
 

@@ -17,5 +17,8 @@ interface MyAPICall {
     @GET("current/last/results.json")
     fun getLastResult() : Call<lastRaceModelDriver>
 
+    @GET("current/constructorStandings.json")
+    fun getCurrentConstructorStandings() : Call<CurrentConstructorModel>
+
 
 }

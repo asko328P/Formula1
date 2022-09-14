@@ -32,10 +32,11 @@
             tools:layout_editor_absoluteX="79dp" />
 
         <Button
+            android:id="@+id/buttonCurrentChampionship"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
 
-            android:text="Current chamionship standings:"
+            android:layout_height="wrap_content"
+            android:text="Current chamionship standings"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView"
             app:layout_constraintVertical_bias="0.36"
@@ -48,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="264dp"
-        android:text="Select what you want to do:"
+        android:text="Welcome to the Formula 1 companion app"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

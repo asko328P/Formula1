@@ -24,7 +24,6 @@ import java.util.*
 
  class LastRaceResults : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,7 +32,6 @@ import java.util.*
         val view = inflater.inflate(R.layout.fragment_last_race_results, container, false)
 
         activity?.requestedOrientation=ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-
         var raceNameTextView = view.findViewById<TextView>(R.id.textView2)
 
         var recycler = view.findViewById<RecyclerView>(R.id.recycler)
@@ -49,7 +47,6 @@ import java.util.*
 
         myAPICall.getLastResult().enqueue(object: Callback<lastRaceModelDriver> {
             override fun onResponse(call: Call<lastRaceModelDriver>, response: Response<lastRaceModelDriver>) {
-
                 if(response.body() != null){
                     var resp = response.body()
                     d("asko", resp!!.mrData.raceTable.races.get(0).results.get(0).driver.familyName)
@@ -60,29 +57,18 @@ import java.util.*
                     recycler.setLayoutManager(LinearLayoutManager(context))
                     recycler.adapter=adapter
 
-
-
                 }
                 else{
                     return
                 }
-
             }
 
             override fun onFailure(call: Call<lastRaceModelDriver>, t: Throwable) {
                 d("asko","bruh"+t.toString())
                 return
             }
-
         })
 
-        // Inflate the layout for this fragment
-
-
         return view
-
-
-
     }
-
  }

@@ -1,6 +1,5 @@
 package com.example.formula1
 
-import org.json.JSONObject
 
 import com.google.gson.annotations.SerializedName
 
