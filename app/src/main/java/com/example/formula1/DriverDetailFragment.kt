@@ -9,6 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import org.w3c.dom.Text
 
 class DriverDetailFragment : Fragment() {
@@ -71,7 +73,7 @@ class DriverDetailFragment : Fragment() {
 
 
         val profileImage = view.findViewById<ImageView>(R.id.imageView3)
-        Glide.with(this).load(wikiUrl).centerCrop().into(profileImage)
+        Glide.with(this).load(wikiUrl).transform(CenterCrop(), RoundedCorners(78)).into(profileImage)
     }
 
 }

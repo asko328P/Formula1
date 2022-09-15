@@ -31,7 +31,8 @@ import java.util.*
 
         val view = inflater.inflate(R.layout.fragment_last_race_results, container, false)
 
-        activity?.requestedOrientation=ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        //activity?.requestedOrientation=ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        activity?.requestedOrientation=ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
         var raceNameTextView = view.findViewById<TextView>(R.id.textView2)
 
         var recycler = view.findViewById<RecyclerView>(R.id.recycler)
