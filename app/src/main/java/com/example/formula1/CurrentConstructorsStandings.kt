@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Callback
@@ -27,7 +26,7 @@ class CurrentConstructorsStandings : Fragment() {
         val view = inflater.inflate(R.layout.fragment_current_constructors_standings, container, false)
         activity?.requestedOrientation= ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
-        var recycler2 = view.findViewById<RecyclerView>(R.id.recyclerCons)
+        var recycler2 = view.findViewById<RecyclerView>(R.id.recyclerConsYear)
 
         val retrofit = Retrofit.Builder()
             .baseUrl("http://ergast.com/api/f1/")
@@ -39,8 +38,6 @@ class CurrentConstructorsStandings : Fragment() {
         myAPICall.getCurrentConstructorStandings().enqueue(object : Callback<CurrentConstructorModel> {
             override fun onResponse(call: Call<CurrentConstructorModel>, response: Response<CurrentConstructorModel>) {
                 if(response.body() != null){
-
-
                     var resp = response.body()
                     Log.d("asko",resp?.mrData!!.standingTable.standingsLists.get(0).constructorStandings.copyOf().contentToString())
                     var adapter2 = GridItemAdapter(resp?.mrData!!.standingTable.standingsLists.get(0).constructorStandings.copyOf())

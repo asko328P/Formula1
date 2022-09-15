@@ -20,5 +20,8 @@ interface MyAPICall {
     @GET("current/constructorStandings.json")
     fun getCurrentConstructorStandings() : Call<CurrentConstructorModel>
 
+    @GET("constructorStandings.json")
+    fun getConstructorStandingsByYear() : Call<CurrentConstructorModel>
+
 
 }

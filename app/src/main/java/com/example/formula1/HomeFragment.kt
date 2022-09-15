@@ -29,6 +29,10 @@ class HomeFragment : Fragment() {
         buttonConstructorsStandings.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_currentConstructorsStandings)
         }
+        val buttonConstructorByYear = view.findViewById<Button>(R.id.buttonConsByYear)
+        buttonConstructorByYear.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_constructorStandingsByYear)
+        }
         return view
     }
 

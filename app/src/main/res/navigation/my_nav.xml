@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_homeFragment_to_currentConstructorsStandings"
             app:destination="@id/currentConstructorsStandings" />
+        <action
+            android:id="@+id/action_homeFragment_to_constructorStandingsByYear"
+            app:destination="@id/constructorStandingsByYear" />
     </fragment>
     <fragment
         android:id="@+id/driverDetailFragment"
@@ -45,4 +48,9 @@
         android:name="com.example.formula1.CurrentConstructorsStandings"
         android:label="Current constructor standings:"
         tools:layout="@layout/fragment_current_constructors_standings" />
+    <fragment
+        android:id="@+id/constructorStandingsByYear"
+        android:name="com.example.formula1.ConstructorStandingsByYear"
+        android:label="Constructor Standings By Year"
+        tools:layout="@layout/fragment_constructor_standings_by_year" />
 </navigation>
