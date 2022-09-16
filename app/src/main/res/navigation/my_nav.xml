@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_homeFragment_to_constructorStandingsByYear"
             app:destination="@id/constructorStandingsByYear" />
+        <action
+            android:id="@+id/action_homeFragment_to_cachedDrivers"
+            app:destination="@id/cachedDrivers" />
     </fragment>
     <fragment
         android:id="@+id/driverDetailFragment"
@@ -42,15 +45,39 @@
         <argument
             android:name="driverParc"
             app:argType="com.example.formula1.DriverParc" />
+        <action
+            android:id="@+id/action_driverDetailFragment_to_lastRaceResults"
+            app:destination="@id/lastRaceResults"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/currentConstructorsStandings"
         android:name="com.example.formula1.CurrentConstructorsStandings"
         android:label="Current constructor standings:"
-        tools:layout="@layout/fragment_current_constructors_standings" />
+        tools:layout="@layout/fragment_current_constructors_standings" >
+        <action
+            android:id="@+id/action_currentConstructorsStandings_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/constructorStandingsByYear"
         android:name="com.example.formula1.ConstructorStandingsByYear"
         android:label="Constructor Standings By Year"
-        tools:layout="@layout/fragment_constructor_standings_by_year" />
+        tools:layout="@layout/fragment_constructor_standings_by_year" >
+        <action
+            android:id="@+id/action_constructorStandingsByYear_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cachedDrivers"
+        android:name="com.example.formula1.dataBase.fragments.CachedDrivers"
+        android:label="fragment_cached_drivers"
+        tools:layout="@layout/fragment_cached_drivers" >
+        <action
+            android:id="@+id/action_cachedDrivers_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
 </navigation>

@@ -1,22 +1,29 @@
 package com.example.formula1
 
+import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.example.formula1.dataBase.*
 import org.w3c.dom.Text
 
 class DriverDetailFragment : Fragment() {
 
     private val args: DriverDetailFragmentArgs by navArgs()
     private lateinit var driver: DriverParc
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +34,9 @@ class DriverDetailFragment : Fragment() {
 
         driver = args.driverParc
 
+
+
+
         return view
     }
 
@@ -34,14 +44,15 @@ class DriverDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val nameTextView = view.findViewById<TextView>(R.id.textView18)
-        nameTextView.setText(driver.givenName)
         val surNameTextView = view.findViewById<TextView>(R.id.textView19)
-        surNameTextView.setText(driver.familyName)
         val nationalityTextView = view.findViewById<TextView>(R.id.textView20)
-        nationalityTextView.setText(driver.nationality)
         val dateOfBirthTextView = view.findViewById<TextView>(R.id.textView21)
-        dateOfBirthTextView.setText(driver.dateOfBirth)
         val racingNumberTextView = view.findViewById<TextView>(R.id.textView22)
+
+        nameTextView.setText(driver.givenName)
+        surNameTextView.setText(driver.familyName)
+        nationalityTextView.setText(driver.nationality)
+        dateOfBirthTextView.setText(driver.dateOfBirth)
         racingNumberTextView.setText(driver.permanentNumber)
 
         //val wikiUrl = driver.url
@@ -70,10 +81,10 @@ class DriverDetailFragment : Fragment() {
             "vettel" -> wikiUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Sebastian_Vettel_2015_Malaysia_podium_1.jpg/133px-Sebastian_Vettel_2015_Malaysia_podium_1.jpg"
         }
 
-
-
         val profileImage = view.findViewById<ImageView>(R.id.imageView3)
         Glide.with(this).load(wikiUrl).transform(CenterCrop(), RoundedCorners(78)).into(profileImage)
+
+
     }
 
 }

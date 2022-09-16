@@ -40,7 +40,7 @@ class CurrentConstructorsStandings : Fragment() {
                 if(response.body() != null){
                     var resp = response.body()
                     Log.d("asko",resp?.mrData!!.standingTable.standingsLists.get(0).constructorStandings.copyOf().contentToString())
-                    var adapter2 = GridItemAdapter(resp?.mrData!!.standingTable.standingsLists.get(0).constructorStandings.copyOf())
+                    var adapter2 = GridItemAdapter(resp.mrData.standingTable.standingsLists.get(0).constructorStandings.copyOf())
                     val gridLayout = GridLayoutManager(context, 2)
                     recycler2.layoutManager=gridLayout
                     recycler2.adapter=adapter2
