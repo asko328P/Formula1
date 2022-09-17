@@ -6,18 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
+
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.example.formula1.dataBase.*
+
 import org.w3c.dom.Text
+
 
 class DriverDetailFragment : Fragment() {
 
@@ -33,8 +32,6 @@ class DriverDetailFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_driver_detail, container, false)
 
         driver = args.driverParc
-
-
 
 
         return view
@@ -83,6 +80,8 @@ class DriverDetailFragment : Fragment() {
 
         val profileImage = view.findViewById<ImageView>(R.id.imageView3)
         Glide.with(this).load(wikiUrl).transform(CenterCrop(), RoundedCorners(78)).into(profileImage)
+
+
 
 
     }

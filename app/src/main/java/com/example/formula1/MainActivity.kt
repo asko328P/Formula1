@@ -2,12 +2,16 @@ package com.example.formula1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
+
+    //ovdje sam dodao room
 
 
 
