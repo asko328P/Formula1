@@ -1,5 +1,6 @@
 package com.example.formula1
 
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.os.Bundle
@@ -32,6 +33,19 @@ class HomeFragment : Fragment() {
         val buttonConstructorByYear = view.findViewById<Button>(R.id.buttonConsByYear)
         buttonConstructorByYear.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_constructorStandingsByYear)
+        }
+
+        val buttonShare = view.findViewById<Button>(R.id.buttonSHare)
+        buttonShare.setOnClickListener{
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, "Download the Formula1 companion app now:")
+                type = "text/plain"
+            }
+
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+
         }
         return view
     }

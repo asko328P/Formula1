@@ -6,14 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.example.formula1.data.DriverEntity
+import com.example.formula1.data.DriverViewModel
 
 import org.w3c.dom.Text
 
@@ -23,6 +28,8 @@ class DriverDetailFragment : Fragment() {
     private val args: DriverDetailFragmentArgs by navArgs()
     private lateinit var driver: DriverParc
 
+    private lateinit var mDriverViewModel: DriverViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +37,8 @@ class DriverDetailFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_driver_detail, container, false)
+
+
 
         driver = args.driverParc
 
@@ -40,11 +49,24 @@ class DriverDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
+        mDriverViewModel = ViewModelProvider(this).get(DriverViewModel::class.java)
+
+
         val nameTextView = view.findViewById<TextView>(R.id.textView18)
         val surNameTextView = view.findViewById<TextView>(R.id.textView19)
         val nationalityTextView = view.findViewById<TextView>(R.id.textView20)
         val dateOfBirthTextView = view.findViewById<TextView>(R.id.textView21)
         val racingNumberTextView = view.findViewById<TextView>(R.id.textView22)
+
+        val buttonSave = view.findViewById<Button>(R.id.buttonSaveDriver)
+
+        buttonSave.setOnClickListener{
+            val driver = DriverEntity(0, driver.driverId ,driver.givenName,driver.familyName, driver.nationality, driver.dateOfBirth, driver.permanentNumber)
+            mDriverViewModel.add(driver)
+            Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_LONG).show()
+        }
 
         nameTextView.setText(driver.givenName)
         surNameTextView.setText(driver.familyName)
