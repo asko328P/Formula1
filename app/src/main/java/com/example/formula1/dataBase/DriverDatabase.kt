@@ -1,4 +1,4 @@
-package com.example.formula1.data
+package com.example.formula1.dataBase
 
 import android.content.Context
 import androidx.room.Database

@@ -1,6 +1,5 @@
-package com.example.formula1.data
+package com.example.formula1.dataBase
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

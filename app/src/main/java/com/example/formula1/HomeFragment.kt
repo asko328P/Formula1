@@ -47,6 +47,10 @@ class HomeFragment : Fragment() {
             startActivity(shareIntent)
 
         }
+        val buttonCached = view.findViewById<Button>(R.id.buttonCached)
+        buttonCached.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_cachedDrivers)
+        }
         return view
     }
 

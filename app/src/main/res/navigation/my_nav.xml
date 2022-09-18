@@ -72,7 +72,7 @@
     </fragment>
     <fragment
         android:id="@+id/cachedDrivers"
-        android:name="com.example.formula1.dataBase.fragments.CachedDrivers"
+        android:name="com.example.formula1.CachedDrivers"
         android:label="fragment_cached_drivers"
         tools:layout="@layout/fragment_cached_drivers" >
         <action

@@ -1,6 +1,5 @@
 package com.example.formula1
 
-import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,10 +16,8 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.example.formula1.data.DriverEntity
-import com.example.formula1.data.DriverViewModel
-
-import org.w3c.dom.Text
+import com.example.formula1.dataBase.DriverEntity
+import com.example.formula1.dataBase.DriverViewModel
 
 
 class DriverDetailFragment : Fragment() {

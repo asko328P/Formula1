@@ -54,6 +54,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Share app" />
+
+        <Button
+            android:id="@+id/buttonCached"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Cached Drivers" />
     </LinearLayout>
 
     <TextView

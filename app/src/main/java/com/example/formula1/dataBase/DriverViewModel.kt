@@ -1,4 +1,4 @@
-package com.example.formula1.data
+package com.example.formula1.dataBase
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class DriverViewModel(application: Application): AndroidViewModel(application) {
 
-    private val readAllData: LiveData<List<DriverEntity>>
+    val readAllData: LiveData<List<DriverEntity>>
     private val repository: DriverRepository
 
     init {
